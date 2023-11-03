@@ -114,3 +114,7 @@
   - settings.py >> INSTALLED_APPS에 생성한 app 추가
 
 
+## 템플릿 언어
+```
+템플릿 작성 시 편의성 제공
+```

@@ -56,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
-        'APP_DIRS': True,
+        'APP_DIRS': True, # 각각의 App의 'templates' 디렉토리가 있으니까 템플릿을 찾을 때 거기서 찾아라~
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
