@@ -6,7 +6,8 @@
 {% load static%}
 
 {% block date-block %}
-  <div>04 Nov, 2023</div>
+  <!-- 템플릿 변수 사용 -->
+  <div>{{ date }}</div>
 {% endblock %}
 
 
@@ -61,7 +62,7 @@
   <div class="info">
     <h3>가라아게</h3>
     <P>튀김이 얇고 바삭한 일본식 닭튀김 요리</p>
-    <a href="#">메뉴 보기</a>
+    <a href="/foods/karaage">메뉴 보기</a>
   </div>
 </div>
 

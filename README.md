@@ -135,3 +135,12 @@
 
 ## 템플릿 상속
   - bock, extends
+
+
+
+## Elegant URL
+  - 동적 url  
+    ex) `path('menu/<str:food>/', views.food_detail)`  
+    menu/food를 문자열로 인식.  
+    food_detail 호출 시 food에 대한 값을 parameter로 전달.
+    전달한 parameter를 토대로 context 생성 및 템플릿 변수 사용하여 웹페이지 출력.
