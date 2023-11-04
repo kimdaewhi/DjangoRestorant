@@ -1,0 +1,32 @@
+<!-- 템플릿 태그 : static에 있는 정적 파일을
+    현재 이 템플릿 파일에서 사용한다고 알려줌.
+-->
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>코스토랑</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href={% static 'foods/css/styles.css'%}>
+</head>
+
+<body>
+    <div> 
+        {# block 키워드를 사용해서 동적으로 렌더링하는 부분에 적용 #}
+        {% block date-block %}
+            <div>지정된 날짜가 없습니다.</div>
+        {% endblock date-block %} 
+    </div>
+    <hr/>
+
+    <h1>코스토랑</h1>
+    <h2>넌 코딩할때가 제일 이뻐</h2>
+
+    <div class="food-container">
+        {% block food-container %}
+        {% endblock food-container %}
+    </div>
+</body>
+</html>

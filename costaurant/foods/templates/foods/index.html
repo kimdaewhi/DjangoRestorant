@@ -1,96 +1,85 @@
 <!-- 템플릿 태그 : static에 있는 정적 파일을
     현재 이 템플릿 파일에서 사용한다고 알려줌.
 -->
+{# 부모 템플릿 상속 #}
+{% extends './base.html' %}
 {% load static%}
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>코스토랑</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href={% static 'foods/css/styles.css'%}>
-</head>
-<body>
-  <div> July 16, 2020 </div>
-  <hr/>
+{% block date-block %}
+  <div>04 Nov, 2023</div>
+{% endblock %}
 
-  <h1>코스토랑</h1>
-  <h2>넌 코딩할때가 제일 이뻐</h2>
-  
-  <div class="food-container">
 
-    <div class="food">
-      <img src={% static 'foods/images/sushi.jpg'%} width="300px" height="200px"/>
-      <div class="info">
-        <h3>모둠 한판</h3>
-        <P>연어, 광어, 대게 맛살, 초새우 등이 담겨있는 모둠 초밥(15p)</p>
-        <a href="#">메뉴 보기</a>
-      </div>
-    </div>
-    
-    <div class="food">
-      <img src={% static 'foods/images/soba.jpg'%} width="300px" height="200px"/>
-      <div class="info">
-        <h3>메밀소바</h3>
-        <P>가쓰오부시와 다시마를 넣고 3시간 이상 진하게 우려낸 육수와 메밀 소바</p>
-        <a href="#">메뉴 보기</a>
-      </div>
-    </div>
-    
-    <div class="food">
-      <img src={% static 'foods/images/omurice.jpg'%} width="300px" height="200px"/>
-      <div class="info">
-        <h3>오므라이스</h3>
-        <P>채소와 햄을 잘게 썰어서 볶은 일식 오믈렛</p>
-        <a href="#">메뉴 보기</a>
-      </div>
-    </div>
-    
-    <div class="food">
-      <img src={% static 'foods/images/sukiyaki.jpg'%} width="300px" height="200px"/>
-      <div class="info">
-        <h3>스키야키</h3>
-        <P>쯔유 베이스의 감칠맛 나는 양념과 소고기, 다양한 채소와 등으로 만들어진 일식 전골</p>
-        <a href="#">메뉴 보기</a>
-      </div>
-    </div>
-
-    <div class="food">
-      <img src={% static 'foods/images/mazesoba.jpg'%} width="300px" height="200px"/>
-      <div class="info">
-        <h3>마제소바</h3>
-        <P>특제 양념장으로 맛을 낸 야부라소바의 일종</p>
-        <a href="#">메뉴 보기</a>
-      </div>
-    </div>
-
-    <div class="food">
-      <img src={% static 'foods/images/karaage.jpg'%} width="300px" height="200px"/>
-      <div class="info">
-        <h3>가라아게</h3>
-        <P>튀김이 얇고 바삭한 일본식 닭튀김 요리</p>
-        <a href="#">메뉴 보기</a>
-      </div>
-    </div>
-
-    <div class="food">
-      <img src={% static 'foods/images/yakitori.jpg'%} width="300px" height="200px"/>
-      <div class="info">
-        <h3>야키토리</h3>
-        <P>특제 양념을 발라 숯불에 구운 일식 꼬치 요리</p>
-        <a href="#">메뉴 보기</a>
-      </div>
-    </div>
-
-    <div class="food">
-      <img src={% static 'foods/images/yokan.jpg'%} width="300px" height="200px"/>
-      <div class="info">
-        <h3>양갱</h3>
-        <P>일본식으로 재해석한 화과자</p>
-        <a href="#">메뉴 보기</a>
-      </div>
-    </div>
-    
+{% block food-container %}
+<div class="food">
+  <img src={% static 'foods/images/sushi.jpg'%} width="300px" height="200px"/>
+  <div class="info">
+    <h3>모둠 한판</h3>
+    <P>연어, 광어, 대게 맛살, 초새우 등이 담겨있는 모둠 초밥(15p)</p>
+    <a href="#">메뉴 보기</a>
   </div>
-</body>
-</html>
+</div>
+
+<div class="food">
+  <img src={% static 'foods/images/soba.jpg'%} width="300px" height="200px"/>
+  <div class="info">
+    <h3>메밀소바</h3>
+    <P>가쓰오부시와 다시마를 넣고 3시간 이상 진하게 우려낸 육수와 메밀 소바</p>
+    <a href="#">메뉴 보기</a>
+  </div>
+</div>
+
+<div class="food">
+  <img src={% static 'foods/images/omurice.jpg'%} width="300px" height="200px"/>
+  <div class="info">
+    <h3>오므라이스</h3>
+    <P>채소와 햄을 잘게 썰어서 볶은 일식 오믈렛</p>
+    <a href="#">메뉴 보기</a>
+  </div>
+</div>
+
+<div class="food">
+  <img src={% static 'foods/images/sukiyaki.jpg'%} width="300px" height="200px"/>
+  <div class="info">
+    <h3>스키야키</h3>
+    <P>쯔유 베이스의 감칠맛 나는 양념과 소고기, 다양한 채소와 등으로 만들어진 일식 전골</p>
+    <a href="#">메뉴 보기</a>
+  </div>
+</div>
+
+<div class="food">
+  <img src={% static 'foods/images/mazesoba.jpg'%} width="300px" height="200px"/>
+  <div class="info">
+    <h3>마제소바</h3>
+    <P>특제 양념장으로 맛을 낸 야부라소바의 일종</p>
+    <a href="#">메뉴 보기</a>
+  </div>
+</div>
+
+<div class="food">
+  <img src={% static 'foods/images/karaage.jpg'%} width="300px" height="200px"/>
+  <div class="info">
+    <h3>가라아게</h3>
+    <P>튀김이 얇고 바삭한 일본식 닭튀김 요리</p>
+    <a href="#">메뉴 보기</a>
+  </div>
+</div>
+
+<div class="food">
+  <img src={% static 'foods/images/yakitori.jpg'%} width="300px" height="200px"/>
+  <div class="info">
+    <h3>야키토리</h3>
+    <P>특제 양념을 발라 숯불에 구운 일식 꼬치 요리</p>
+    <a href="#">메뉴 보기</a>
+  </div>
+</div>
+
+<div class="food">
+  <img src={% static 'foods/images/yokan.jpg'%} width="300px" height="200px"/>
+  <div class="info">
+    <h3>양갱</h3>
+    <P>일본식으로 재해석한 화과자</p>
+    <a href="#">메뉴 보기</a>
+  </div>
+</div>
+{% endblock food-container %}
