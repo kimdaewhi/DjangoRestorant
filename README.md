@@ -149,7 +149,7 @@
 ## Model
   - makemigrations
   - migrate
-  - showmigartions
+  - showmigrations
   - sqlmigrate [객체명] [번호]
 
   - python manage.py shell : 사용자 명령어 받아서 해석, 프로그램 실행
