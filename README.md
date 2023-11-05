@@ -144,3 +144,56 @@
     menu/food를 문자열로 인식.  
     food_detail 호출 시 food에 대한 값을 parameter로 전달.
     전달한 parameter를 토대로 context 생성 및 템플릿 변수 사용하여 웹페이지 출력.
+
+
+## Model
+  - makemigrations
+  - migrate
+  - showmigartions
+  - sqlmigrate [객체명] [번호]
+
+  - python manage.py shell : 사용자 명령어 받아서 해석, 프로그램 실행
+  ```
+  from foods.models import Menu
+
+
+
+  Menu.objects.create (name="가라아게",
+                      desc="튀김이 얇고 바삭한 일본식 닭튀김",
+                      price=14000,
+                      img="foods/images/karaage.jpg" )
+  ```  
+
+
+### Django ORM 문법
+  ``` 
+    Menu.objects.all().values()
+    Menu.objects.all().values('{컬럼명}')
+    Menu.objects.order_by('{-}컬럼')
+
+    ✏️ 데이터 조회
+    Menu.objects.filter(name__contains="코") >> "코" 라는 단어가 들어간 DataSet 조회
+    Menu.objects.filter(price__range=(2000,10000))  >> price 컬럼이 2000 ~ 10000 사이에 해당하는 DataSet
+    ⭐⭐ filter 대신 get 함수를 사용하면 단일 데이터 조회. 조회 결과가 2개 이상이면 에러 발생
+    
+    ✏️ 데이터 수정/삭제
+    ** 수정
+    data = Menu.objects.get(id={ID})
+    data.[필드] = "변경 필드 값"
+    data.save()
+
+    ** 삭제
+    data = Menu.objects.get(id={ID})
+    data.delete()
+  ```
+
+### QuerySet
+  DB에서 데이터를 조회, 필터링 및 가공하기 위한 객체입니다. QuerySet은 Django ORM을 통해 데이터베이스에 대한 쿼리를 실행하고 결과를 Python 객체로 반환
+
+
+## 관리자 도구 사용
+**1. 관리자 계정 생성** : python manage.py createsuperuser  
+
+**2. admin에 Model 신규 추가**
+  - admin.py 파일 열기
+  - 모델 등록 : admin.site.register(Menu)
